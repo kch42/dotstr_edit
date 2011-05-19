@@ -1,0 +1,150 @@
+# German translations for sum package.
+# Copyright (C) 2010 THE sum'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sum package.
+# Automatically generated, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: sum 2tools\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-28 00:57+0100\n"
+"PO-Revision-Date: 2010-11-28 01:10+0100\n"
+"Last-Translator: Kevin Chabowski <kevin@kch42.de>\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: dotstr_edit.py:132
+msgid "&About"
+msgstr "&Über"
+
+#: dotstr_edit.py:129
+msgid "&Exit"
+msgstr "S&chließen"
+
+#: dotstr_edit.py:134
+msgid "&File"
+msgstr "&Datei"
+
+#: dotstr_edit.py:110
+msgid "&Filter"
+msgstr "&Filter"
+
+#: dotstr_edit.py:135
+msgid "&Help"
+msgstr "&Hilfe"
+
+#: dotstr_edit.py:123
+msgid "&New"
+msgstr "&Neu"
+
+#: dotstr_edit.py:124
+msgid "&Open"
+msgstr "&Öffnen"
+
+#: dotstr_edit.py:126
+msgid "&Save"
+msgstr "&Speichern"
+
+#: dotstr_edit.py:117
+#: dotstr_edit.py:335
+msgid ".str Editor"
+msgstr ".str Editor"
+
+#: dotstr_edit.py:332
+msgid ".str Editor is a tool for editing the .str files of EA's BFME2"
+msgstr ".str Editor ist ein Tool zum bearbeiten der .str Dateien von EA's SuM2"
+
+#: dotstr_edit.py:319
+msgid "Can not save file."
+msgstr "Kann Datei nicht speichern."
+
+#: dotstr_edit.py:318
+#, python-format
+msgid ""
+"Can not write to file \"%s\".\n"
+"Usually that means that you do not have enough privileges or you ran out of disc memory."
+msgstr ""
+"Kann nicht auf Datei \"%s\" schreiben.\n"
+"Normalerweise bedeutet dies, dass du nicht genügend Privilegien oder nicht genug Speicherplatz hast."
+
+#: dotstr_edit.py:264
+msgid "Choose a file"
+msgstr "Wähle Datei aus"
+
+#: dotstr_edit.py:282
+msgid "Could not open file"
+msgstr "Kann Datei nicht öffnen"
+
+#: dotstr_edit.py:281
+msgid ""
+"Could not open file.\n"
+"Usually that means that the file is invalid or you do not have enough privileges."
+msgstr ""
+"Kann Datei nicht öffnen.\n"
+"Normalerweise bedeutet dies, dass du nicht genügend Privilegien hast."
+
+#: dotstr_edit.py:20
+msgid "Identification"
+msgstr "Identifikation"
+
+#: dotstr_edit.py:381
+msgid "Invalid name"
+msgstr "Ungültiger Name"
+
+#: dotstr_edit.py:70
+msgid "Name of your new entry:"
+msgstr "Name deines neuen Eintrages:"
+
+#: dotstr_edit.py:141
+msgid "New"
+msgstr "Neu"
+
+#: dotstr_edit.py:67
+msgid "New entry"
+msgstr "Neuer Eintrag"
+
+#: dotstr_edit.py:142
+msgid "Open"
+msgstr "Öffnen"
+
+#: dotstr_edit.py:143
+msgid "Save"
+msgstr "Speichern"
+
+#: dotstr_edit.py:127
+msgid "Save &As"
+msgstr "Spechern &unter"
+
+#: dotstr_edit.py:292
+#: dotstr_edit.py:298
+msgid "Save to"
+msgstr "Spechern unter"
+
+#: dotstr_edit.py:21
+msgid "Text"
+msgstr "Text"
+
+#: dotstr_edit.py:183
+msgid "Text:"
+msgstr "Text:"
+
+#: dotstr_edit.py:380
+msgid "This name is already in use. Choose another one."
+msgstr "Dieser Name wird bereits benutzt. Wähle einen anderen."
+
+#: dotstr_edit.py:214
+msgid "Unsaved changes"
+msgstr "Ungespeicherte Änderungen"
+
+#: dotstr_edit.py:213
+msgid "You did not save your changes. Continue?"
+msgstr "Du hast deine Änderungen nicht gespeichert. Fortfahren?"
+
+#: dotstr_edit.py:425
+msgid "str File"
+msgstr "str Datei"
+
