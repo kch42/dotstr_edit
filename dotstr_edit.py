@@ -8,10 +8,6 @@ import locale, gettext
 
 from wx.lib.mixins.listctrl import ListCtrlAutoWidthMixin
 
-def progdir():
-	"""Get the path to the directory of this file"""
-	return os.path.abspath(os.path.dirname(sys.argv[0]))
-
 class TransDictListCtrl(wx.ListCtrl, ListCtrlAutoWidthMixin):
 	"""ListCtrl for a translation dictionary"""
 	def __init__(self, parent):
@@ -187,6 +183,9 @@ class editor_frame(wx.Frame):
 		
 		self.mainpanel.SetSizer(vbox)
 		
+		cool_icon = wx.Icon(os.path.join(scriptdir, "wm-icon.ico"), wx.BITMAP_TYPE_ICO)
+		self.SetIcon(cool_icon)
+		
 		# Binding events
 		self.Bind(wx.EVT_MENU,   self.on_new,        id=wx.ID_NEW)
 		self.Bind(wx.EVT_MENU,   self.on_open,       id=wx.ID_OPEN)
@@ -353,6 +352,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."""
 		info.SetCopyright(u'(C) 2010-2011 \"Die Völker Mittelerdes\" Modding Crew')
 		info.SetLicence(licence)
 		info.AddDeveloper('Kevin Chabowski')
+		info.SetIcon(wx.Icon(os.path.join(scriptdir, 'icon.png'), wx.BITMAP_TYPE_PNG))
 		
 		wx.AboutBox(info)
 	
@@ -423,6 +423,11 @@ class dotstr_edit_app(wx.App):
 		return True
 
 if __name__ == '__main__':
+	# get directory of script / executable
+	scriptdir = os.path.dirname(unicode(
+		sys.executable if hasattr(sys,"frozen") and sys.frozen in ("windows_exe", "console_exe") else __file__,
+		sys.getfilesystemencoding()))
+	
 	# init localisation
 	if os.name == 'nt': 
 		# windows hack for locale setting 
@@ -434,7 +439,7 @@ if __name__ == '__main__':
 		if lang: 
 			os.environ['LANG'] = lang
 	locale.setlocale(locale.LC_ALL, '')
-	translator = gettext.translation('dotstr_edit', os.path.join(progdir(), 'locale'), fallback=True)
+	translator = gettext.translation('dotstr_edit', os.path.join(scriptdir, 'locale'), fallback=True)
 	translator.install(True)
 	
 	fd_wildcard = _("str File")+"|*.str|*.*|*.*"
