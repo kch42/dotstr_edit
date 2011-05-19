@@ -255,6 +255,25 @@ class editor_frame(wx.Frame):
 			self.filename = ""
 			self.form_init()
 	
+	def load_file(self, new_fn):
+		if new_fn != "":
+			try:
+				fp = open(new_fn, "rb")
+				temp_dict = strfile.dict_parse(fp.read())
+				self.dict = temp_dict
+				fp.close()
+				self.filename = new_fn
+				self.changed = False
+				self.form_init()
+			except:
+				del dialog
+				dialog = wx.MessageDialog(None,
+					                  message=_("Could not open file.\nUsually that means that the file is invalid or you do not have enough privileges."),
+					                  caption=_("Could not open file"),
+					                  style=wx.ICON_ERROR | wx.OK)
+				dialog.ShowModal()
+				dialog.Destroy()
+	
 	def on_open(self, event):
 		if self.really_discard():
 			new_fn = ""
@@ -263,23 +282,7 @@ class editor_frame(wx.Frame):
 				new_fn = dialog.GetPath()
 			dialog.Destroy()
 			
-			if new_fn != "":
-				try:
-					fp = open(new_fn, "rb")
-					temp_dict = strfile.dict_parse(fp.read())
-					self.dict = temp_dict
-					fp.close()
-					self.filename = new_fn
-					self.changed = False
-					self.form_init()
-				except:
-					del dialog
-					dialog = wx.MessageDialog(None,
-					                          message=_("Could not open file.\nUsually that means that the file is invalid or you do not have enough privileges."),
-					                          caption=_("Could not open file"),
-					                          style=wx.ICON_ERROR | wx.OK)
-					dialog.ShowModal()
-					dialog.Destroy()
+			self.load_file(new_fn)
 	
 	def save_file(self, force_path=False):
 		saveto = ""
@@ -419,6 +422,8 @@ class dotstr_edit_app(wx.App):
 	def OnInit(self):
 		app_frame = editor_frame()
 		app_frame.Show()
+		if len(sys.argv) > 1:
+			app_frame.load_file(sys.argv[1])
 		self.SetTopWindow(app_frame)
 		return True
 
