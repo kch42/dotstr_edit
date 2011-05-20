@@ -3,7 +3,7 @@
 
 import os, re
 
-lotr_str_regex = re.compile(r'([A-Za-z]*\:.*?)\"(.*?)\"(?:.*?)END',re.DOTALL)
+lotr_str_regex = re.compile(r'(.*?\:.*?)\"(.*?)\"(?:.*?)END',re.DOTALL)
 
 def dict_parse(rawdata):
 	global lotr_str_regex
