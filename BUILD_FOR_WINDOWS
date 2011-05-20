@@ -1,0 +1,24 @@
+If you want to create a MS-Windows EXE file, just run the "exefying.bat" Batch-File.
+Additional stuff you need for this:
+* py2exe
+* 7-Zip (optional)
+* UPX (optional)
+7-Zip and UPX are only needed, if you want to compress the EXE (and its libbrary.zip).
+If you don't want compression, edit exefying.bat and find:
+
+REM  Uncomment next line, if you do not want to compress...
+REM  goto end
+
+and change to:
+
+REM  Uncomment next line, if you do not want to compress...
+goto end
+
+The finished EXE file (and everything that this EXE needs) is now located in the directory "dist".
+
+You can also build an Installer using NSIS.
+Before compiling the setup.nsi file, you need to download vcredist_x86.exe and put  it into the directory "redist".
+You can get "vcredist_x86.exe" here:
+http://www.microsoft.com/downloads/en/details.aspx?familyid=9b2da534-3e03-4391-8a4d-074b9f2bc1bf&displaylang=en
+(It's not Open Source, but everyone is allowed to redistribute it)
+

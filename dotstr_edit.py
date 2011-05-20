@@ -239,7 +239,7 @@ class editor_frame(wx.Frame):
 	
 	def form_init(self):
 		"""
-		IInitializes / clears all formulars
+		Initializes / clears all formulars
 		"""
 		self.populate_list()
 		self.input_filter.SetValue("")
@@ -366,12 +366,13 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."""
 		self.trans_text_ctrl.SetValue("")
 	
 	def on_filter(self, event):
-		if self.input_filter.GetValue() != "":
+		if event.GetString() != "":
 			self.populate_list()
-		if len(self.transl_list.dict) == 0 and self.input_filter.GetValue() != "":
+		if len(self.transl_list.dict) == 0 and event.GetString() != "":
 			self.input_filter.SetBackgroundColour(wx.Colour(255,100,100))
 		else:
 			self.input_filter.SetBackgroundColour(wx.NullColour)
+		self.input_filter.Refresh()
 	
 	def on_textedit(self, event):
 		key = self.transl_list.get_seclection()
