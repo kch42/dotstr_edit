@@ -354,7 +354,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."""
 		info.SetDescription(description)
 		info.SetCopyright(u'(C) 2010-2011 \"Die Völker Mittelerdes\" Modding Crew')
 		info.SetLicence(licence)
-		info.AddDeveloper('Kevin Chabowski')
+		info.AddDeveloper('Laria Carolin Chabowski')
 		info.SetIcon(wx.Icon(os.path.join(scriptdir, 'icon.png'), wx.BITMAP_TYPE_PNG))
 		
 		wx.AboutBox(info)
